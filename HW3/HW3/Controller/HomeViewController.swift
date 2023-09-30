@@ -23,8 +23,33 @@ class HomeViewController: UIViewController {
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
         
+        configureNavbar()
+        
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
+    }
+    
+    private func configureNavbar(){
+        var image = UIImage(named: "Logo")
+        image = image?.withRenderingMode(.alwaysOriginal)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
+        
+        let item1 = UIBarButtonItem(title: "The Shows", style: .plain, target: self, action: #selector(barButtonPressed))
+        
+        let item2 = UIBarButtonItem(title: "Movie", style: .plain, target: self, action: #selector(barButtonPressed))
+
+        let item3 = UIBarButtonItem(title: "My List", style: .plain, target: self, action: #selector(barButtonPressed))
+        
+        item1.tintColor = UIColor.white
+        item2.tintColor = UIColor.white
+        item3.tintColor = UIColor.white
+        
+        navigationItem.rightBarButtonItems = [item1, item2, item3]
+    }
+    
+    @objc private func barButtonPressed(){
+        
     }
     
     override func viewDidLayoutSubviews() {
