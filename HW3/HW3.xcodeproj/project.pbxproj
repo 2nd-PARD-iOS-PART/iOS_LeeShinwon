@@ -22,6 +22,7 @@
 		DA1857252AC7EE6D00B89847 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1857242AC7EE6D00B89847 /* DownloadsViewController.swift */; };
 		DA1857272AC7F1B000B89847 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1857262AC7F1B000B89847 /* MoreViewController.swift */; };
 		DA18572C2AC81C6200B89847 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18572B2AC81C6200B89847 /* CollectionViewTableViewCell.swift */; };
+		DA18572E2AC82D1200B89847 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18572D2AC82D1200B89847 /* HeroHeaderUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		DA1857242AC7EE6D00B89847 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		DA1857262AC7F1B000B89847 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		DA18572B2AC81C6200B89847 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		DA18572D2AC82D1200B89847 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				DA18572B2AC81C6200B89847 /* CollectionViewTableViewCell.swift */,
+				DA18572D2AC82D1200B89847 /* HeroHeaderUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA18572C2AC81C6200B89847 /* CollectionViewTableViewCell.swift in Sources */,
+				DA18572E2AC82D1200B89847 /* HeroHeaderUIView.swift in Sources */,
 				DA1857232AC7EE5900B89847 /* SearchViewController.swift in Sources */,
 				DA1856F22AC7E10D00B89847 /* MainTabBarViewController.swift in Sources */,
 				DA1857252AC7EE6D00B89847 /* DownloadsViewController.swift in Sources */,
