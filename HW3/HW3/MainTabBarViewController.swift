@@ -33,7 +33,7 @@ class MainTabBarViewController: UITabBarController{
         tabBar.tintColor = .label
         
         setViewControllers([vc1,vc2,vc3, vc4,vc5], animated:true)
-        
+        //dark mode/ light mode - command + shift + A
         
     }
 
