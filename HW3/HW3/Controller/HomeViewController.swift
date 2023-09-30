@@ -33,9 +33,10 @@ class HomeViewController: UIViewController {
         var image = UIImage(named: "Logo")
         image = image?.withRenderingMode(.alwaysOriginal)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
+        //navigationItem.leftBarButtonItem =
+        let logo = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
         
-        let item1 = UIBarButtonItem(title: "The Shows", style: .plain, target: self, action: #selector(barButtonPressed))
+        let item1 = UIBarButtonItem(title: "TV Shows", style: .plain, target: self, action: #selector(barButtonPressed))
         
         let item2 = UIBarButtonItem(title: "Movie", style: .plain, target: self, action: #selector(barButtonPressed))
 
@@ -45,7 +46,8 @@ class HomeViewController: UIViewController {
         item2.tintColor = UIColor.white
         item3.tintColor = UIColor.white
         
-        navigationItem.rightBarButtonItems = [item1, item2, item3]
+        navigationItem.leftBarButtonItems = [logo, item1, item2, item3]
+        
     }
     
     @objc private func barButtonPressed(){
