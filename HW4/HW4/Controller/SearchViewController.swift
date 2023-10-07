@@ -18,13 +18,10 @@ class SearchViewController: UIViewController{
         view.backgroundColor = .systemBackground
         
         makeSearchBar()
-        print("make\n")
         
-        //tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
-        print("make\n")
         
         setTableView()
         setHeader()
@@ -35,9 +32,17 @@ class SearchViewController: UIViewController{
     func makeSearchBar(){
         searchBar.placeholder = "Search for a show, movie, genre, etc"
                
-        //todo:how can i add the mic.fill button?
-        
+        let mic = UIBarButtonItem(image: UIImage(systemName: "mic.fill"), style: .plain, target: self, action: nil)
+        mic.tintColor = .white
+        navigationItem.rightBarButtonItem = mic
         navigationItem.titleView = searchBar
+        
+//        searchBar.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            searchBar.topAnchor.constraint(equalTo: view.topAnchor),
+//            searchBar.leftAnchor.constraint(equalTo: view.leftAnchor)
+//        ])
     }
     
     func setHeader(){
