@@ -31,7 +31,11 @@ class SearchViewController: UIViewController{
     
     func makeSearchBar(){
         searchBar.placeholder = "Search for a show, movie, genre, etc"
-               
+//        let navBox: UIView = {
+//            let box = UIView(frame: <#T##CGRect#>)
+//
+//            return box
+//        }()
         let mic = UIBarButtonItem(image: UIImage(systemName: "mic.fill"), style: .plain, target: self, action: nil)
         mic.tintColor = .white
         navigationItem.rightBarButtonItem = mic
