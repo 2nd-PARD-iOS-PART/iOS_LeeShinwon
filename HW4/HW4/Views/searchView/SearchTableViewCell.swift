@@ -13,7 +13,7 @@ class SearchTableViewCell: UITableViewCell{
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 16)
         
         return label
     }()
@@ -21,6 +21,8 @@ class SearchTableViewCell: UITableViewCell{
     let button:UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        
+        button.tintColor = .white
         return button
     }()
     
@@ -59,20 +61,20 @@ class SearchTableViewCell: UITableViewCell{
         NSLayoutConstraint.activate([
             leftImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             leftImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            leftImageView.widthAnchor.constraint(equalToConstant: 100),
-            leftImageView.heightAnchor.constraint(equalToConstant: 150)
+            leftImageView.widthAnchor.constraint(equalToConstant: 128),
+            leftImageView.heightAnchor.constraint(equalToConstant: 83)
             
         ])
         
         NSLayoutConstraint.activate([
             //label.topAnchor.constraint(equalTo: contentView.topAnchor),
             label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            label.leftAnchor.constraint(equalTo: leftImageView.rightAnchor, constant: 10),
+            label.leftAnchor.constraint(equalTo: leftImageView.rightAnchor, constant: 20),
         ])
 
         NSLayoutConstraint.activate([
             button.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
+            button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20),
         ])
         
     }

@@ -27,6 +27,7 @@ class SearchViewController: UIViewController{
         print("make\n")
         
         setTableView()
+        setHeader()
         
 
     }
@@ -37,6 +38,17 @@ class SearchViewController: UIViewController{
         //todo:how can i add the mic.fill button?
         
         navigationItem.titleView = searchBar
+    }
+    
+    func setHeader(){
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        let headerlabel = UILabel(frame: header.bounds)
+        headerlabel.text = "Poplular Searches"
+        headerlabel.textAlignment = .left
+        headerlabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        header.addSubview(headerlabel)
+        
+        tableView.tableHeaderView = header
     }
     
     func setTableView(){
@@ -72,7 +84,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
             print("fail to searView/TableViewCell")
             return UITableViewCell()
         }
-        cell.backgroundColor = .black
+        cell.backgroundColor = UIColor(red: 0.125, green: 0.125, blue: 0.125, alpha: 1)
+        
+        
         
         let target = Search.SearchData[indexPath.item]
         let image = UIImage(named:"\(target.image).png")
@@ -86,7 +100,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 83
     }
     
     
