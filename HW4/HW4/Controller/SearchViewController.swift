@@ -31,22 +31,19 @@ class SearchViewController: UIViewController{
     
     func makeSearchBar(){
         searchBar.placeholder = "Search for a show, movie, genre, etc"
-//        let navBox: UIView = {
-//            let box = UIView(frame: <#T##CGRect#>)
-//
-//            return box
-//        }()
-        let mic = UIBarButtonItem(image: UIImage(systemName: "mic.fill"), style: .plain, target: self, action: nil)
+        searchBar.searchTextField.backgroundColor = UIColor.clear
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 13, weight: .regular)
+        let mic = UIBarButtonItem(image: UIImage(systemName: "mic.fill", withConfiguration: imageConfig), style: .plain, target: self, action: nil)
         mic.tintColor = .white
         navigationItem.rightBarButtonItem = mic
         navigationItem.titleView = searchBar
+      
+        navigationController?.navigationBar.layer.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1).cgColor
+        navigationController?.navigationBar.layer.cornerRadius = 5
+    
+        //navigationController?.navigationBar.layer.borderWidth = 10
+        //navigationController?.navigationBar.layer.borderColor = UIColor.white.cgColor
         
-//        searchBar.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            searchBar.topAnchor.constraint(equalTo: view.topAnchor),
-//            searchBar.leftAnchor.constraint(equalTo: view.leftAnchor)
-//        ])
     }
     
     func setHeader(){
@@ -114,3 +111,11 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
     
     
 }
+
+extension SearchViewController {
+    @objc func injected() {
+        viewDidLoad()
+    }
+}
+
+

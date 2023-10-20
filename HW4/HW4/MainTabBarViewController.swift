@@ -40,3 +40,9 @@ class MainTabBarViewController: UITabBarController{
 
 }
 
+//extension MainTabBarViewController {
+//    @objc func injected() {
+//        viewDidLoad()
+//    }
+//}
+
