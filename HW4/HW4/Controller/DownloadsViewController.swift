@@ -9,6 +9,8 @@ import UIKit
 
 class DownloadsViewController: UIViewController {
     
+    //dault로 보여질 UIView 3개 선언
+    
     let imageView: UIImageView = {
         let image = UIImageView()
         image.frame = CGRect(x: 110, y: 248, width: 194, height: 194)
@@ -49,6 +51,7 @@ class DownloadsViewController: UIViewController {
         setUpcomponent()
     }
     
+    // UIView 들 위치 설정
     private func setUpcomponent(){
         imageView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
