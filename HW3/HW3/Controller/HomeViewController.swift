@@ -7,9 +7,17 @@
 
 import UIKit
 
+enum Sections: Int {
+    case MyList = 0
+    case EuropeMovie = 1
+    case RomanceDrama = 2
+    case ActionThriller = 3
+}
+
+
 class HomeViewController: UIViewController {
     
-    let sectionTitles : [String] = ["Continue Watching for Eron", "My List", "Europe movie", "Romance/Drama", "Action/Thriller"]
+    let sectionTitles : [String] = ["My List", "Europe movie", "Romance/Drama", "Action/Thriller"]
     
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -44,11 +52,20 @@ class HomeViewController: UIViewController {
 
         let item3 = UIBarButtonItem(title: "My List", style: .plain, target: self, action: #selector(barButtonPressed))
         
+        // flexibleSpace 아이템을 생성합니다.
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+                
+        
         item1.tintColor = UIColor.white
         item2.tintColor = UIColor.white
         item3.tintColor = UIColor.white
         
-        navigationItem.leftBarButtonItems = [logo, item1, item2, item3]
+        navigationController?.isToolbarHidden = false
+        
+        navigationItem.leftBarButtonItem = logo
+        
+        navigationController?.toolbar.setItems([item1, item2, item3], animated: false)
         
     }
     
@@ -75,6 +92,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else{
             return UITableViewCell()
         }
+        
+//        switch indexPath.section {
+//        case Sections.MyList.rawValue:
+//            cell.configure(with: CollectionViewTableViewCell.titles)
+//        case Sections.EuropeMovie.rawValue:
+//            cell.configure(with: CollectionViewTableViewCell.titles)
+//        case Sections.RomanceDrama.rawValue:
+//            cell.configure(with: CollectionViewTableViewCell.titles)
+//        case Sections.ActionThriller.rawValue:
+//            cell.configure(with: CollectionViewTableViewCell.titles)
+//        default:
+//            cell.configure(with: CollectionViewTableViewCell.titles)
+//        }
+        //return UITableViewCell()
         return cell
     }
     
@@ -84,6 +115,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
         return 40
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else{return}
+        header.textLabel?.font = .systemFont(ofSize: 19, weight: .semibold)
+        header.textLabel?.frame = CGRect(x: header.bounds.origin.x, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
+        header.textLabel?.textColor = .white
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
